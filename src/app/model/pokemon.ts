@@ -3,5 +3,6 @@ export interface Pokemon {
     name: string,
     img: string,
     type: string[],
-    height: number //altezza dm
+    height: number, //altezza dm
+    stats: number[]
 }

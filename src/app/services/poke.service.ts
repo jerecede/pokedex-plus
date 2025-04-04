@@ -46,12 +46,19 @@ export default class PokeService {
               types.push(currentType);
             }
 
+            let stats: number[] = [];
+            for (const element of pokemonObj.stats) {
+              const currentStat = element.base_stat;
+              stats.push(currentStat);
+            }
+
             const pokemon: Pokemon = {
               id: Number(pokemonObj.id),
               name: pokemonObj.name as string,
               img: pokemonObj.sprites.front_default as string,
               type: types,
               height: pokemonObj.height / 10,
+              stats: stats
             }
 
             pokemons.push(pokemon);
